@@ -42,9 +42,9 @@ typedef struct instruction_s
 
 /*Function declearations*/
 
-void pint(void);
+int pint(void);
 
-void pall(void);
+int pall(void);
 
 stack_t *makenode(int val);
 
@@ -62,7 +62,7 @@ int swap(void);
 
 int opcode_match(char *cmd);
 
-void opcode_processor(char **toks);
+void opcode_processor(char **toks, char *buff, FILE *mfile, int l);
 
 int push_preprocessor(char *push);
 

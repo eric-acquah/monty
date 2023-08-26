@@ -4,7 +4,8 @@
  *pint - print the value at the top of the stack
  *
  */
-void pint(void)
+
+int pint(void)
 {
 	int item;
 
@@ -12,11 +13,10 @@ void pint(void)
 	{
 		item = top->n;
 		printf("%d\n", item);
-		return;
+		return (0);
 	}
 
-	fprintf(stderr, "can't pint, stack empty");
-	exit(EXIT_FAILURE);
+	return (-4);
 }
 
 /**
@@ -67,7 +67,7 @@ int swap(void)
 /**
  *pall - print all items in stack
  */
-void pall(void)
+int pall(void)
 {
 	stack_t *tmp = top;
 
@@ -78,7 +78,9 @@ void pall(void)
 			printf("%d\n", tmp->n);
 			tmp = tmp->next;
 		}
+		return (0);
 	}
+	return (-5);
 }
 
 void add(void)

@@ -9,24 +9,38 @@ case 0:
 		push(arg);
 	else
 	{
-		fprintf(stderr, "L<line_number>: usage: push integer\n");
+		fprintf(stderr, "L%d: usage: push integer\n", l);
+		free_list(top);
+		free(buff);
+		fclose(mfile);
 		exit(EXIT_FAILURE);
 	}
 	break;
 case 1:
 	if (pop() == -2)
 	{
-		fprintf(stderr, "L<line_number>: can't pop an empty stack\n");
+		fprintf(stderr, "L%d: can't pop an empty stack\n", l);
+		free_list(top);
+		free(buff);
+		fclose(mfile);
 		exit(EXIT_FAILURE);
 	}
 	break;
 case 2:
-	pall();
+	if (pall() == -5)
+	{
+		free(buff);
+		fclose(mfile);
+		exit(EXIT_FAILURE);
+	}
 	break;
 case 3:
 	if (swap() == -3)
 	{
-		fprintf(stderr, "L<line_number>: can't swap, stack too short\n");
+		fprintf(stderr, "L%d: can't swap, stack too short\n", l);
+		free_list(top);
+		free(buff);
+		fclose(mfile);
 		exit(EXIT_FAILURE);
 	}
 	break;
@@ -34,10 +48,19 @@ case 4:
 	add();
 	break;
 case 5:
-	pint();
+	if (pint() == -4)
+	{
+		fprintf(stderr, "can't pint, stack empty\n");
+		free(buff);
+		fclose(mfile);
+		exit(EXIT_FAILURE);
+	}
 	break;
 default:
-	fprintf(stderr, "L<line_number>: unknown instruction <opcode>\n");
+	fprintf(stderr, "L%d: unknown instruction %s\n", l, toks[i]);
+	free_list(top);
+	free(buff);
+	fclose(mfile);
 	exit(EXIT_FAILURE);
 }
 

@@ -5,7 +5,7 @@
  *@toks: tokens
  */
 
-void opcode_processor(char **toks)
+void opcode_processor(char **toks, char *buff, FILE *mfile, int l)
 {
 	int arg, i = 0;
 

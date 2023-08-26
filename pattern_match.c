@@ -25,11 +25,11 @@ int opcode_match(char *cmd)
 			return (0);
 	}
 
-	j = 1;
+	j = 0;
 	while (opcode[j] != NULL)
 	{
 		if (strcmp(cmd, opcode[j]) == 0)
-			return (j);
+			return (j + 1);
 		j++;
 	}
 		return (-1);

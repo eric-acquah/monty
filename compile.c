@@ -10,7 +10,7 @@ void compile(FILE *mfile)
 {
 	char *buff = NULL, *token, *tokens[1024];
 	size_t init_byts = 0, stat = 0, neg = -1;
-	int i;
+	int i, l = 1;
 
 	while ((stat = getline(&buff, &init_byts, mfile)) != neg)
 	{
@@ -32,7 +32,8 @@ void compile(FILE *mfile)
 		}
 		tokens[i] = NULL;
 
-		opcode_processor(tokens);
+		opcode_processor(tokens, buff, mfile, l);
+		l++;
 	}
 	free(buff);
 	free_list(top);
