@@ -1,5 +1,5 @@
 #include "extern.h"
-#include "adt_header.h"
+#include "monty.h"
 
 stack_t *top = NULL;
 

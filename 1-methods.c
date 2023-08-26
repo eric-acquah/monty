@@ -1,6 +1,5 @@
 #include "extern.h"
-#include "adt_header.h"
-
+#include "monty.h"
 /**
  *pint - print the value at the top of the stack
  *
@@ -17,6 +16,7 @@ void pint(void)
 	}
 
 	fprintf(stderr, "can't pint, stack empty");
+	exit(EXIT_FAILURE);
 }
 
 /**
@@ -75,10 +75,13 @@ void pall(void)
 	{
 		while (tmp != NULL)
 		{
-			printf("|%d|", tmp->n);
+			printf("%d\n", tmp->n);
 			tmp = tmp->next;
 		}
-		putchar('\n');
 	}
-	/* free_list(top); */
+}
+
+void add(void)
+{
+	;
 }
