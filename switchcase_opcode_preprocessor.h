@@ -45,7 +45,14 @@ case 3:
 	}
 	break;
 case 4:
-	add();
+	if (add() == -7)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", l);
+		free_list(top);
+		free(buff);
+		fclose(mfile);
+		exit(EXIT_FAILURE);
+	}
 	break;
 case 5:
 	if (pint() == -4)

@@ -82,8 +82,3 @@ int pall(void)
 	}
 	return (-5);
 }
-
-void add(void)
-{
-	;
-}

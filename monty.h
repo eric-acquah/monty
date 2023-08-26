@@ -70,7 +70,7 @@ void compile(FILE *mfile);
 
 int digit_check(char *num);
 
-void add(void);
+int add(void);
 
 void nop(void);
 
