@@ -1,6 +1,6 @@
 #ifndef EXTERN
 #define EXTERN
-#include "adt_header.h"
+#include "monty.h"
 
 extern stack_t *top;
 

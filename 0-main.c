@@ -1,4 +1,4 @@
-#include "adt_header.h"
+#include "monty.h"
 #include "extern.h"
 
 /**
@@ -11,9 +11,6 @@
 int main(int argc, char **argv)
 {
 	FILE *mfile;
-	char *buff = NULL, *token, *tokens[1024];
-	size_t init_byts = 0, stat, neg = -1;
-	int i;
 
 	if (argc < 2)
 	{
@@ -28,30 +25,8 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 
-	stat = getline(&buff, &init_byts, mfile);
-	if (buff == NULL || stat == neg)
-	{
-		if (stat == neg)
-			free(buff);
-		exit(EXIT_FAILURE);
-	}
+	compile(mfile);/*process the file contents*/
 
-	token = strtok((char *)buff, " \n");
-	i = 0;
-	while (token != NULL)
-	{
-		tokens[i] = token;
-		token = strtok(NULL, " \n");
-		i++;
-	}
-	tokens[i] = NULL;
-
-	i = 0;
-	while (tokens[i] != NULL)
-	{
-		printf("token[%s]\n", tokens[i]);
-		i++;
-	}
 	fclose(mfile);
 	return (0);
 }
