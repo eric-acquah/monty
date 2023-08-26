@@ -15,7 +15,7 @@ int opcode_match(char *cmd)
 		"pall",
 		"swap",
 		"add",
-		"pint",
+		"pint", "nop",
 		NULL
 	};
 

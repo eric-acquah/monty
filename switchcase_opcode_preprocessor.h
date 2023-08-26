@@ -56,6 +56,9 @@ case 5:
 		exit(EXIT_FAILURE);
 	}
 	break;
+case 6:
+	nop();
+	break;
 default:
 	fprintf(stderr, "L%d: unknown instruction %s\n", l, toks[i]);
 	free_list(top);

@@ -70,4 +70,6 @@ void compile(FILE *mfile);
 
 void add(void);
 
+void nop(void);
+
 #endif
