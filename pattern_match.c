@@ -50,5 +50,19 @@ int push_preprocessor(char *push)
 	split = strtok(splited, " ");
 	split = strtok(NULL, " ");
 
-	return (atoi(split));
+	if (digit_check(split))
+		return (atoi(split));
+	return (-505);
+}
+
+int digit_check(char *num)
+{
+	int i;
+
+	for (i = 0; num[i] != '\0'; i++)
+	{
+		if (isdigit(num[i]) == 0)
+			return (0);
+	}
+	return (1);
 }

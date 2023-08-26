@@ -68,6 +68,8 @@ int push_preprocessor(char *push);
 
 void compile(FILE *mfile);
 
+int digit_check(char *num);
+
 void add(void);
 
 void nop(void);

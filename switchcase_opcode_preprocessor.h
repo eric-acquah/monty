@@ -5,7 +5,7 @@ switch (opcode_match(toks[i]))
 {
 case 0:
 	arg = push_preprocessor(toks[i]);
-	if (isalpha(arg) == 0)
+	if (arg != -505)
 		push(arg);
 	else
 	{
