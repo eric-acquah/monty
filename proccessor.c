@@ -7,11 +7,7 @@
 
 void opcode_processor(char **toks, char *buff, FILE *mfile, int l)
 {
-	int arg, i = 0;
+	int arg;
 
-	while (toks[i] != NULL)
-	{
 #include "switchcase_opcode_preprocessor.h"
-		i++;
-	}
 }

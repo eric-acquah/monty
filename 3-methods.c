@@ -22,3 +22,23 @@ int mod(void)
 	push(mod);
 	return (0);
 }
+
+/**
+ *pchar - treat the top value on the stack as an ascii value
+ *Return: 0 if successful else return -13
+ */
+
+int pchar(void)
+{
+	int val;
+
+	val = pop();
+	push(val);
+	if (val == -2)
+		return (-13);
+	else if (isascii(val) == 0)
+		return (-14);
+
+	printf("%c\n", val);
+	return (0);
+}

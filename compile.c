@@ -14,20 +14,17 @@ void compile(FILE *mfile)
 
 	while ((stat = getline(&buff, &init_byts, mfile)) != neg)
 	{
+		for (i = 0; buff[i] != '\0' && buff[i] != '#'; i++)
+			;
 
-		if (buff == NULL || stat == neg)
-		{
-			if (stat == neg)
-				free(buff);
-			exit(EXIT_FAILURE);
-		}
+		buff[i] = '\0';
 
-		token = strtok(buff, "\n");
+		token = strtok(buff, " \n");
 		i = 0;
 		while (token != NULL)
 		{
 			tokens[i] = token;
-			token = strtok(NULL, "\n");
+			token = strtok(NULL, " \n");
 			i++;
 		}
 		tokens[i] = NULL;

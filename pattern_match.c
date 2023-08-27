@@ -11,56 +11,33 @@ int opcode_match(char *cmd)
 {
 	int j;
 	char *opcode[] = {
-		"pop", "pall", "swap",
+		"push","pop", "pall", "swap",
 		"add", "pint", "nop",
 		"sub", "div", "mul",
-		"mod",
+		"mod", "pchar",
 		NULL
 	};
-
-	if (strncmp(cmd, "push", 4) == 0)
-	{
-		if (cmd[5] != ' ' && cmd[5] != '\0')
-			return (0);
-	}
-	else if (cmd[0] == '#')
-		return (101);
 
 	j = 0;
 	while (opcode[j] != NULL)
 	{
 		if (strcmp(cmd, opcode[j]) == 0)
-			return (j + 1);
+			return (j);
 		j++;
 	}
 		return (-1);
 }
 
-/**
- *push_preprocessor - split push opcode to command and argument
- *@push: the opcode
- *Return: the argument converted to an integer
- */
-int push_preprocessor(char *push)
-{
-	char *split;
-	char splited[100];
-
-	strcpy(splited, push);
-
-	split = strtok(splited, " ");
-	split = strtok(NULL, " ");
-
-	if (digit_check(split))
-		return (atoi(split));
-	return (-505);
-}
 
 int digit_check(char *num)
 {
 	int i;
 
-	for (i = 0; num[i] != '\0'; i++)
+	i = 0;
+
+	if (num[0] == '-')
+		i++;
+	for (; num[i] != '\0'; i++)
 	{
 		if (isdigit(num[i]) == 0)
 			return (0);

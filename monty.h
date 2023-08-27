@@ -1,5 +1,6 @@
 #ifndef ADT
 #define ADT
+
 /*including labraries*/
 #include <stdio.h>
 #include <unistd.h>
@@ -64,8 +65,6 @@ int opcode_match(char *cmd);
 
 void opcode_processor(char **toks, char *buff, FILE *mfile, int l);
 
-int push_preprocessor(char *push);
-
 void compile(FILE *mfile);
 
 int digit_check(char *num);
@@ -79,6 +78,8 @@ int _div(void);
 int mul(void);
 
 int mod(void);
+
+int pchar(void);
 
 void nop(void);
 
