@@ -67,7 +67,7 @@ int swap(void)
 /**
  *pall - print all items in stack
  */
-int pall(void)
+void pall(void)
 {
 	stack_t *tmp = top;
 
@@ -78,7 +78,5 @@ int pall(void)
 			printf("%d\n", tmp->n);
 			tmp = tmp->next;
 		}
-		return (0);
 	}
-	return (-5);
 }
