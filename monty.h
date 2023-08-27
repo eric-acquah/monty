@@ -74,6 +74,12 @@ int add(void);
 
 int sub(void);
 
+int _div(void);
+
+int mul(void);
+
+int mod(void);
+
 void nop(void);
 
 #endif

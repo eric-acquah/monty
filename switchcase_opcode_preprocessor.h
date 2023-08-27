@@ -76,6 +76,43 @@ case 7:
 		exit(EXIT_FAILURE);
 	}
 	break;
+case 8:
+	arg = _div();
+	if (arg == -9 || arg == -10)
+	{
+		if (arg == -9)
+			fprintf(stderr, "L%d: can't div, stack too short\n", l);
+		else
+			fprintf(stderr, "L%d: division by zero\n", l);
+		free_list(top);
+		free(buff);
+		fclose(mfile);
+		exit(EXIT_FAILURE);
+	}
+	break;
+case 9:
+	if (mul() == -11)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", l);
+		free_list(top);
+		free(buff);
+		fclose(mfile);
+		exit(EXIT_FAILURE);
+	}
+	break;
+case 10:
+	if (mod() == -12)
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", l);
+		free_list(top);
+		free(buff);
+		fclose(mfile);
+		exit(EXIT_FAILURE);
+	}
+	break;
+case 101:
+	i++;
+	break;
 default:
 	fprintf(stderr, "L%d: unknown instruction %s\n", l, toks[i]);
 	free_list(top);

@@ -13,7 +13,8 @@ int opcode_match(char *cmd)
 	char *opcode[] = {
 		"pop", "pall", "swap",
 		"add", "pint", "nop",
-		"sub",
+		"sub", "div", "mul",
+		"mod",
 		NULL
 	};
 
@@ -22,6 +23,8 @@ int opcode_match(char *cmd)
 		if (cmd[5] != ' ' && cmd[5] != '\0')
 			return (0);
 	}
+	else if (cmd[0] == '#')
+		return (101);
 
 	j = 0;
 	while (opcode[j] != NULL)
