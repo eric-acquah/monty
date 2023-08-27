@@ -72,6 +72,8 @@ int digit_check(char *num);
 
 int add(void);
 
+int sub(void);
+
 void nop(void);
 
 #endif

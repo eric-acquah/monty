@@ -11,11 +11,9 @@ int opcode_match(char *cmd)
 {
 	int j;
 	char *opcode[] = {
-		"pop",
-		"pall",
-		"swap",
-		"add",
-		"pint", "nop",
+		"pop", "pall", "swap",
+		"add", "pint", "nop",
+		"sub",
 		NULL
 	};
 

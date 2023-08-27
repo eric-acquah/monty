@@ -5,7 +5,6 @@
  *nop - do absolutely nothing
  *
  */
-
 void nop(void)
 {
 	;
@@ -31,5 +30,22 @@ int add(void)
 	b = pop();
 	sum = a + b;
 	push(sum);
+	return (0);
+}
+
+int sub(void)
+{
+	int a, b, sub;
+
+	/* Not enough nodes to swap */
+	if (top == NULL || top->next == NULL)
+	{
+		return (-8);
+	}
+
+	a = pop();
+	b = pop();
+	sub = b - a;
+	push(sub);
 	return (0);
 }

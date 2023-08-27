@@ -66,6 +66,16 @@ case 5:
 case 6:
 	nop();
 	break;
+case 7:
+	if (sub() == -8)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", l);
+		free_list(top);
+		free(buff);
+		fclose(mfile);
+		exit(EXIT_FAILURE);
+	}
+	break;
 default:
 	fprintf(stderr, "L%d: unknown instruction %s\n", l, toks[i]);
 	free_list(top);
