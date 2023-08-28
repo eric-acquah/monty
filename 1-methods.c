@@ -1,8 +1,8 @@
 #include "extern.h"
 #include "monty.h"
 /**
- *pint - print the value at the top of the stack
- *
+ * pint - print the value at the top of the stack
+ * Return: return the value printed
  */
 
 int pint(void)
