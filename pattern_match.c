@@ -33,8 +33,10 @@ int digit_check(char *num)
 {
 	int i;
 
-	i = 0;
+	if (num == NULL)
+		return (0);
 
+	i = 0;
 	if (num[0] == '-')
 		i++;
 	for (; num[i] != '\0'; i++)
