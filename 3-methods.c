@@ -18,7 +18,7 @@ int mod(void)
 
 	a = pop();
 	b = pop();
-	mod = a % b;
+	mod = b % a;
 	push(mod);
 	return (0);
 }
