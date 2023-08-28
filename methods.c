@@ -95,6 +95,7 @@ stack_t *makenode(int val)
 	if (fresh_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
+		free_list(top);
 		return (NULL);
 	}
 	fresh_node->n = val;

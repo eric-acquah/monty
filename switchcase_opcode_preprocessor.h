@@ -6,7 +6,15 @@ switch (opcode_match(toks[0]))
 case 0:
 	arg = digit_check(toks[1]);
 	if (arg)
-		push(atoi(toks[1]));
+	{
+		if (push(atoi(toks[1])) == -1)
+		{
+			free(buff);
+			fclose(mfile);
+			exit(EXIT_FAILURE);
+		}
+
+	}
 	else
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", l);
