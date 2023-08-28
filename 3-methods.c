@@ -16,6 +16,9 @@ int mod(void)
 		return (-12);
 	}
 
+
+	if (top->n == 0)
+		return (-21);
 	a = pop();
 	b = pop();
 	mod = b % a;

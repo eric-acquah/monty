@@ -104,9 +104,13 @@ case 9:
 	}
 	break;
 case 10:
-	if (mod() == -12)
+	arg = mod();
+	if (arg == -12 || arg == -21)
 	{
-		fprintf(stderr, "L%d: can't mod, stack too short\n", l);
+		if (arg == -12)
+			fprintf(stderr, "L%d: can't mod, stack too short\n", l);
+		else
+			fprintf(stderr, "L%d: division by zero\n", l);
 		free_list(top);
 		free(buff);
 		fclose(mfile);
