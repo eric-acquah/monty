@@ -42,13 +42,14 @@ void free_list(stack_t *head)
 int swap(void)
 {
 	stack_t *first = top;
-	stack_t *second = top->next;
+	stack_t *second;
 
 	/* Not enough nodes to swap */
 	if (top == NULL || top->next == NULL)
 	{
 		return (-3);
 	}
+	second = top->next;
 
 	if (second->next != NULL)
 		second->next->prev = first;
