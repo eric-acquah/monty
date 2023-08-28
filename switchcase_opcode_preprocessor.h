@@ -60,7 +60,7 @@ case 4:
 case 5:
 	if (pint() == -4)
 	{
-		fprintf(stderr, "can't pint, stack empty\n");
+		fprintf(stderr, "L%d: can't pint, stack empty\n", l);
 		free(buff);
 		fclose(mfile);
 		exit(EXIT_FAILURE);
