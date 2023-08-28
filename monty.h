@@ -1,7 +1,8 @@
 #ifndef ADT
 #define ADT
+#define _GNU_SOURCE
 
-/*including labraries*/
+/*including libraries*/
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>

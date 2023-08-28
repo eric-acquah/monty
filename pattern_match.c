@@ -11,7 +11,7 @@ int opcode_match(char *cmd)
 {
 	int j;
 	char *opcode[] = {
-		"push","pop", "pall", "swap",
+		"push", "pop", "pall", "swap",
 		"add", "pint", "nop",
 		"sub", "div", "mul",
 		"mod", "pchar",
@@ -28,6 +28,11 @@ int opcode_match(char *cmd)
 		return (-1);
 }
 
+/**
+ * digit_check - check for digit
+ * @num: numbers to be checked
+ * Return: return the digit
+ */
 
 int digit_check(char *num)
 {
