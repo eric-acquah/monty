@@ -46,7 +46,7 @@ typedef struct instruction_s
 
 int pint(void);
 
-int pall(void);
+void pall(void);
 
 stack_t *makenode(int val);
 

@@ -27,12 +27,7 @@ case 1:
 	}
 	break;
 case 2:
-	if (pall() == -5)
-	{
-		free(buff);
-		fclose(mfile);
-		exit(EXIT_FAILURE);
-	}
+	pall();
 	break;
 case 3:
 	if (swap() == -3)
