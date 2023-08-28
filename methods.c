@@ -49,7 +49,9 @@ int pop(void)
 	if (top->next == NULL)
 	{
 		item = top->n;
-		free(top);
+		clr = top;
+		top = top->next;
+		free(clr);
 		return (item);
 	}
 
